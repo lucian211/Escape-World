@@ -125,9 +125,7 @@ public class PlayerStory1 : MonoBehaviour
 
                 if (S1teleport == false)
                 {
-                    GameObject s1 = GameObject.Find("S1");
-                    Survivor1 survivor1 = s1.GetComponent<Survivor1>();
-                    survivor1.GetResponse(5);
+                    sendReplyS1(5);
                     S1teleport = true;
                     
                 }
@@ -187,9 +185,7 @@ public class PlayerStory1 : MonoBehaviour
         if (dialog == 2 && !audioSource.isPlaying && giveR == 0)
         {
 
-            GameObject s2 = GameObject.Find("S2");
-            Survivor2 survivor2 = s2.GetComponent<Survivor2>();
-            survivor2.GetResponse(1);
+            sendReplyS2(1);
             giveR = 1;
         }
 
@@ -202,9 +198,7 @@ public class PlayerStory1 : MonoBehaviour
         if (dialog == 3 && !audioSource.isPlaying && giveR == 1)
         {
 
-            GameObject s2 = GameObject.Find("S2");
-            Survivor2 survivor2 = s2.GetComponent<Survivor2>();
-            survivor2.GetResponse(3);
+            sendReplyS2(3);
             giveR = 2;
         }
 
@@ -229,9 +223,7 @@ public class PlayerStory1 : MonoBehaviour
         if (dialog == 5 && !audioSource.isPlaying && giveR == 2)
         {
 
-            GameObject s2 = GameObject.Find("S2");
-            Survivor2 survivor2 = s2.GetComponent<Survivor2>();
-            survivor2.GetResponse(4);
+            sendReplyS2(4);
             giveR = 3;
         }
 
@@ -250,9 +242,7 @@ public class PlayerStory1 : MonoBehaviour
         if (dialog == 6 && !audioSource.isPlaying && giveR == 3)
         {
 
-            GameObject s2 = GameObject.Find("S2");
-            Survivor2 survivor2 = s2.GetComponent<Survivor2>();
-            survivor2.GetResponse(5);
+            sendReplyS2(5);
             giveR = 4;
         }
 
@@ -265,9 +255,7 @@ public class PlayerStory1 : MonoBehaviour
         if (dialog == 7 && !audioSource.isPlaying && giveR == 4)
         {
 
-            GameObject s1 = GameObject.Find("S1");
-            Survivor1 survivor1 = s1.GetComponent<Survivor1>();
-            survivor1.GetResponse(3);
+            sendReplyS1(3);
             giveR = 5;
         }
 
@@ -280,9 +268,7 @@ public class PlayerStory1 : MonoBehaviour
         if (dialog == 8 && !audioSource.isPlaying && giveR == 5)
         {
 
-            GameObject s1 = GameObject.Find("S1");
-            Survivor1 survivor1 = s1.GetComponent<Survivor1>();
-            survivor1.GetResponse(4);
+            sendReplyS1(4);
             giveR = 6;
         }
 
@@ -299,9 +285,7 @@ public class PlayerStory1 : MonoBehaviour
         }
         if (dialog == 10 && !audioSource.isPlaying && giveR == 6)
         {
-            GameObject s1 = GameObject.Find("S1");
-            Survivor1 survivor1 = s1.GetComponent<Survivor1>();
-            survivor1.GetResponse(6);
+            sendReplyS1(6);
             giveR = 7;
         }
 
@@ -316,9 +300,7 @@ public class PlayerStory1 : MonoBehaviour
 
         if (dialog == 11 && !audioSource.isPlaying && giveR == 7)
         {
-            GameObject s1 = GameObject.Find("S1");
-            Survivor1 survivor1 = s1.GetComponent<Survivor1>();
-            survivor1.GetResponse(7);
+            sendReplyS1(7);
             giveR = 8;
         }
 
@@ -331,9 +313,7 @@ public class PlayerStory1 : MonoBehaviour
 
         if (dialog == 12 && !audioSource.isPlaying && giveR == 8)
         {
-            GameObject s1 = GameObject.Find("S1");
-            Survivor1 survivor1 = s1.GetComponent<Survivor1>();
-            survivor1.GetResponse(8);
+            sendReplyS1(8);
             giveR = 9;
         }
 
@@ -363,9 +343,7 @@ public class PlayerStory1 : MonoBehaviour
         }
         if (dialog == 14 && !audioSource.isPlaying && giveR == 9)
         {
-            GameObject s1 = GameObject.Find("S1");
-            Survivor1 survivor1 = s1.GetComponent<Survivor1>();
-            survivor1.GetResponse(9);
+            sendReplyS1(9);
             giveR = 10;
         }
 
@@ -510,6 +488,22 @@ public class PlayerStory1 : MonoBehaviour
         sound_inst.transform.parent = this.transform;
         dialog++;
         audioSource = sound_inst.transform.GetChild(0).gameObject.GetComponent<AudioSource>();
+
+    }
+
+    void sendReplyS1(int x)
+    {
+        GameObject s1 = GameObject.Find("S1");
+        Survivor1 survivor1 = s1.GetComponent<Survivor1>();
+        survivor1.GetResponse(x);
+
+    }
+
+    void sendReplyS2(int x)
+    {
+        GameObject s2 = GameObject.Find("S2");
+        Survivor2 survivor2 = s2.GetComponent<Survivor2>();
+        survivor2.GetResponse(x);
 
     }
 }

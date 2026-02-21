@@ -71,9 +71,7 @@ public class SystemMenu : MonoBehaviour
         if (dialog == 1 && !audioSource.isPlaying && giveR == 0)
         {
 
-            GameObject player = GameObject.Find("Player");
-            PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
-            playerMenu.GetResponse(1);
+            sendReplyPlayer(1);
             giveR = 1;
         }
 
@@ -85,9 +83,7 @@ public class SystemMenu : MonoBehaviour
         if (dialog == 2 && !audioSource.isPlaying && giveR == 1)
         {
 
-            GameObject player = GameObject.Find("Player");
-            PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
-            playerMenu.GetResponse(2);
+            sendReplyPlayer(2);
             giveR = 2;
 
         }
@@ -100,9 +96,7 @@ public class SystemMenu : MonoBehaviour
         if (dialog == 3 && !audioSource.isPlaying && giveR == 2)
         {
 
-            GameObject player = GameObject.Find("Player");
-            PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
-            playerMenu.GetResponse(3);
+            sendReplyPlayer(3);
             giveR = 3;
 
         }
@@ -119,9 +113,7 @@ public class SystemMenu : MonoBehaviour
         if (dialog == 4 && !audioSource.isPlaying && giveR == 3)
         {
 
-            GameObject player = GameObject.Find("Player");
-            PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
-            playerMenu.GetResponse(4);
+            sendReplyPlayer(4);
             giveR = 4;
         }
 
@@ -133,9 +125,7 @@ public class SystemMenu : MonoBehaviour
         if (dialog == 5 && !audioSource.isPlaying && giveR == 4)
         {
 
-            GameObject player = GameObject.Find("Player");
-            PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
-            playerMenu.GetResponse(5);
+            sendReplyPlayer(5);
             giveR = 5;
         }
 
@@ -147,9 +137,7 @@ public class SystemMenu : MonoBehaviour
         if (dialog == 6 && !audioSource.isPlaying && giveR == 5)
         {
 
-            GameObject player = GameObject.Find("Player");
-            PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
-            playerMenu.GetResponse(6);
+            sendReplyPlayer(6);
             giveR = 6;
 
         }
@@ -191,9 +179,7 @@ public class SystemMenu : MonoBehaviour
         if (dialog == 9 && !audioSource.isPlaying && giveR == 0)
         {
 
-            GameObject player = GameObject.Find("Player");
-            PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
-            playerMenu.GetResponse(7);
+            sendReplyPlayer(7);
             giveR = 1;
         }
 
@@ -205,9 +191,7 @@ public class SystemMenu : MonoBehaviour
         if (dialog == 10 && !audioSource.isPlaying && giveR == 1)
         {
 
-            GameObject player = GameObject.Find("Player");
-            PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
-            playerMenu.GetResponse(8);
+            sendReplyPlayer(8);
             giveR = 2;
         }
 
@@ -219,9 +203,7 @@ public class SystemMenu : MonoBehaviour
         if (dialog == 11 && !audioSource.isPlaying && giveR == 2)
         {
 
-            GameObject player = GameObject.Find("Player");
-            PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
-            playerMenu.GetResponse(9);
+            sendReplyPlayer(9);
             giveR = 3;
         }
 
@@ -233,9 +215,7 @@ public class SystemMenu : MonoBehaviour
         if (dialog == 12 && !audioSource.isPlaying && giveR == 3)
         {
 
-            GameObject player = GameObject.Find("Player");
-            PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
-            playerMenu.GetResponse(10);
+            sendReplyPlayer(10);
             giveR = 4;
         }
 
@@ -247,9 +227,7 @@ public class SystemMenu : MonoBehaviour
         if (dialog == 13 && !audioSource.isPlaying && giveR == 4)
         {
 
-            GameObject player = GameObject.Find("Player");
-            PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
-            playerMenu.GetResponse(11);
+            sendReplyPlayer(11);
             giveR = 5;
         }
 
@@ -292,5 +270,12 @@ public class SystemMenu : MonoBehaviour
         dialog++;
         audioSource = sound_inst.transform.GetChild(0).gameObject.GetComponent<AudioSource>();
 
+    }
+
+    void sendReplyPlayer(int x)
+    {
+        GameObject player = GameObject.Find("Player");
+        PlayerMenu playerMenu = player.GetComponent<PlayerMenu>();
+        playerMenu.GetResponse(x);
     }
 }
